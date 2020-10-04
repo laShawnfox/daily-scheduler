@@ -5,11 +5,13 @@ $(document).ready(function (){
      var hour = $(".hour");
      var saveBtn = $(".saveBtn");
      var textareaDiv = $("textarea");
-
+   
     // JS VARIABLES
 
-    //FUNCTION CALLS
-
+    var currentTime =  moment().format("HH");
+    //var currentTimeInt = parseInt("currentTime");
+   var now = parseInt(moment().format('HH'));
+console.groupCollapsed(now);
 
 
 
@@ -26,6 +28,8 @@ $(document).ready(function (){
 //  3. display current date (location: top of calendar (CSS))
 moment().format('dddd'); 
 moment().format("MMM Do"); 
+
+//FUNCTION CALLS
 //  4. onscroll function (possible)
 //  5. format: standard business hours - section off each hour
 //  6. format: days - not weeks or months etc.
@@ -35,11 +39,20 @@ moment().format("MMM Do");
 //     c. future
 // 8. function that allows clicking within the time-block (each block must have an onclick function)
 //     hint: jquery will be of big assistance
+      
 // 9. The event blocks take in input
 // 10. eventlistener() - create a save button for each block to save the input (step 9)
 //     hint: jquery
      saveBtn.on("click", function (){
-      localStorage.setItem("textarea", "time");
+      localStorage.setItem("9AM", ($TEXT9AM.VAL()));
+      localStorage.setItem("10AM", ($TEXT10AM.VAL()));
+      localStorage.setItem("11AM", ($TEXT11AM.val()));
+      localStorage.setItem("12PM", ($TEXT12PM.val()));
+      localStorage.setItem("1PM", ($TEXT1PM.val()));
+      localStorage.setItem("2PM", ($TEXT2PM.val()));
+      localStorage.setItem("3PM", ($TEXT3PM.val()));
+      localStorage.setItem("4PM", ($TEXT4PM.val()));
+      localStorage.setItem("5PM", ($TEXT5PM.val()));
      });
 // 11. grab the users input - saveto local storage (onclick of step 10)
 // 12. onload()- eventpreventdefault
