@@ -53,22 +53,27 @@ document.getElementById("currentDay").innerHTML =  moment().format('dddd MMM Do'
 //     a. past
 //     b. present
 //     c. future
+// $("textarea").
 // 8. function that allows clicking within the time-block (each block must have an onclick function)
 //     hint: jquery will be of big assistance
       
 // 9. The event blocks take in input
 // 10. eventlistener() - create a save button for each block to save the input (step 9)
 //     hint: jquery
+     console.log(saveBtn);
      saveBtn.on("click", function (){
-      localStorage.setItem("9AM", ($text9AM.val()));
-      localStorage.setItem("10AM", ($text10AM.val()));
-      localStorage.setItem("11AM", ($text11AM.val()));
-      localStorage.setItem("12PM", ($text12PM.val()));
-      localStorage.setItem("1PM", ($text1PM.val()));
-      localStorage.setItem("2PM", ($text2PM.val()));
-      localStorage.setItem("3PM", ($text3PM.val()));
-      localStorage.setItem("4PM", ($text4PM.val()));
-      localStorage.setItem("5PM", ($text5PM.val()));
+        console.log(text9AM.val());
+
+      localStorage.setItem("9AM", text9AM.val());
+      
+      localStorage.setItem("10AM", text10AM.val());
+      localStorage.setItem("11AM", text11AM.val());
+      localStorage.setItem("12PM", text12PM.val());
+      localStorage.setItem("1PM", text1PM.val());
+      localStorage.setItem("2PM", text2PM.val());
+      localStorage.setItem("3PM", text3PM.val());
+      localStorage.setItem("4PM", text4PM.val());
+      localStorage.setItem("5PM", text5PM.val());
      });
 // 11. grab the users input - saveto local storage (onclick of step 10)
  $("#text9AM").append(localStorage.getItem("9AM")); //should I put .getItem before appending?
