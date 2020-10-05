@@ -6,7 +6,7 @@ $(document).ready(function (){
    
     // JS VARIABLES
     var currentDay = document.getElementById("currentDay");
-    // var myLeadPara =  document.getElementsByClassName("lead");
+    
 
    // var currentDay = $("#currentDay");
     var hour = $(".hour");
@@ -27,8 +27,6 @@ $(document).ready(function (){
     var currentTimeInt = parseInt("currentTime");
 alert(currentTime);
 
-//var hours = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"];
-
 
 //  <!--1. HTML, CSS, Javascript documents -->
 //  <!-- 2. Scale out with boilerplate -->
@@ -41,7 +39,7 @@ alert(currentTime);
 //  1. date and time
 
 //  3. display current date (location: top of calendar (CSS))
-document.getElementById("currentDay").innerHTML =  moment().format('dddd MMM Do');
+document.getElementById("currentDay").innerHTML =  moment().format('dddd, MMM Do');
 // moment().format('dddd'); 
 // moment().format("MMM Do"); 
 
