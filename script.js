@@ -1,22 +1,27 @@
 $(document).ready(function (){
     //console.log("this is loading");
-    //DOM VARIABLES
-     var currentDay = $("#currentDay");
-     var hour = $(".hour");
-     var saveBtn = $(".saveBtn");
-     var textareaDiv = $("textarea");
-
-     var text9AM = $("#text9AM");
-     var text10AM = $("#text10AM");
-     var text11AM = $("#text11AM");
-     var text12PM = $("#text12PM");
-     var text1PM = $("#text1PM");
-     var text2PM = $("#text2PM");
-     var text3PM = $("#text3PM");
-     var text4PM = $("#text4PM");
-     var text5PM = $("#text5PM");
+    //DOM VARIABLES....How to write dom variables in jquery?
+    document.getElementById("currentDay");
+   document.getElementsByClassName("lead");
    
     // JS VARIABLES
+    var currentDay = document.getElementById("currentDay");
+    // var myLeadPara =  document.getElementsByClassName("lead");
+
+   // var currentDay = $("#currentDay");
+    var hour = $(".hour");
+    var saveBtn = $(".saveBtn");
+    var textareaDiv = $("textarea");
+
+    var text9AM = $("#text9AM");  //WHAT does it mean when it's declared but value never read?
+    var text10AM = $("#text10AM");
+    var text11AM = $("#text11AM");
+    var text12PM = $("#text12PM");
+    var text1PM = $("#text1PM");
+    var text2PM = $("#text2PM");
+    var text3PM = $("#text3PM");
+    var text4PM = $("#text4PM");
+    var text5PM = $("#text5PM");
 
     var currentTime =  parseInt(moment().format('HM'));
     var currentTimeInt = parseInt("currentTime");
@@ -36,6 +41,7 @@ alert(currentTime);
 //  1. date and time
 
 //  3. display current date (location: top of calendar (CSS))
+document.getElementById("currentDay").innerHTML =  moment().format('dddd MMM Do');
 // moment().format('dddd'); 
 // moment().format("MMM Do"); 
 
