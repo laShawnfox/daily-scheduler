@@ -1,19 +1,20 @@
 $(document).ready(function (){
     //console.log("this is loading");
     //DOM VARIABLES....How to write dom variables in jquery?
-    document.getElementById("currentDay");
+  document.getElementById("currentDay");
    document.getElementsByClassName("lead");
-   
+   document.getElementsByClassName("container");
+   document.getElementsByClassName("hour");
     // JS VARIABLES
     var currentDay = document.getElementById("currentDay");
     
 
    // var currentDay = $("#currentDay");
-    var hour = $(".hour");
+    var presentTime = $(".hour");
     var saveBtn = $(".saveBtn");
     var textareaDiv = $("textarea");
 
-    var text9AM = $("#text9AM");  //WHAT does it mean when it's declared but value never read?
+    var text9AM = $("#text9AM");  
     var text10AM = $("#text10AM");
     var text11AM = $("#text11AM");
     var text12PM = $("#text12PM");
@@ -23,25 +24,11 @@ $(document).ready(function (){
     var text4PM = $("#text4PM");
     var text5PM = $("#text5PM");
 
-    var currentTime =  parseInt(moment().format('HM'));
-    var currentTimeInt = parseInt("currentTime");
-alert(currentTime);
-
-
-//  <!--1. HTML, CSS, Javascript documents -->
-//  <!-- 2. Scale out with boilerplate -->
-//  <!-- 3. Put moment.js link in to access jQuery library -->
-//  <!-- 4. Insert jumbotron from Bootstrap -->
-//  <!-- 5. Create div container for form  -->
-//  <!-- 6. Create an array for days of the week--> JQUERY
-//  <!-- 7. Create array for 9-5 workday hours--> JQUERY
-//  <!-- 8. create local storage to save text event -->
-//  1. date and time
-
+//     var currentTime =  parseInt(moment().format('HM'));
+//     var currentTimeInt = parseInt("currentTime");
+// alert(currentTime);
 //  3. display current date (location: top of calendar (CSS))
 document.getElementById("currentDay").innerHTML =  moment().format('dddd, MMM Do');
-// moment().format('dddd'); 
-// moment().format("MMM Do"); 
 
 //FUNCTION CALLS
 //  4. onscroll function (possible)
@@ -51,12 +38,35 @@ document.getElementById("currentDay").innerHTML =  moment().format('dddd, MMM Do
 //     a. past
 //     b. present
 //     c. future
-// $("textarea").
+
+//$.each(textarea,function())
+    $("textarea").each(function(){
+      var currentTime = parseInt($(this).attr("currentTime"));
+      let current = moment().format('HH'); 
+      // console.log(now)
+      // console.log(this.name)
+      let elementTime = this.name
+// console.log(now, elementTime)
+
+      if(elementTime < current) {
+        // console.log("past")
+         $(this).css("background-color", "gray");
+      }
+
+      if(elementTime > current) {
+         $(this).css("background-color", "red");
+      }
+       
+      if(elementTime === current) {
+         $(this).css("background-color", "green");
+      }
+
+    })
 // 8. function that allows clicking within the time-block (each block must have an onclick function)
 //     hint: jquery will be of big assistance
       
 // 9. The event blocks take in input
-// 10. eventlistener() - create a save button for each block to save the input (step 9)
+// 10. event listener() - create a save button for each block to save the input (step 9)
 //     hint: jquery
      console.log(saveBtn);
      saveBtn.on("click", function (){
